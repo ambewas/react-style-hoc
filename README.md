@@ -30,29 +30,23 @@ MyComponent = withStyle(BaseComponent);
 
 
 
-
-
-master branch:
-
+## hof alternative usage:
 usage:
-```
 
+```
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { style, withPadding, withMargin, compose, curry } from 'react-style-hoc';
+import { withPadding, withMargin, compose, curry } from 'react-style-hoc';
 
+const composeStyles = compose(
+  withMargin(60),
+  withPadding(40)
+);
 
-const TestStateless = ({ style, children }) => <div style={style}>{children}</div>
+const TestStateless = ({ children, style }) => <div style={style}>{children}</div>
 
-const withPaddingAndMargin = compose(
-  style,
-  withPadding(40),
-  withMargin(60)
-)
-
-const Styled = withPaddingAndMargin(TestStateless);
-
+const Styled = composeStyles(TestStateless);
 
 class App extends Component {
   render() {
@@ -72,7 +66,6 @@ class App extends Component {
 }
 
 export default App;
+
+
 ```
-
-
-hof alternative usage:

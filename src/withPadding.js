@@ -1,14 +1,9 @@
 import { curry } from 'ramda';
+import React, { Component } from 'react';
 
 
-export default curry((px) => (componentObject) => {
-  const component = componentObject.component || componentObject;
-  const style = componentObject.style;
-  return {
-    style: {
-      ...style,
-      padding: px,
-    },
-    component: component
-  };
-});
+export default (px) => (WrappedComponent) => {
+  return ({style, ...props}) => {
+    return <WrappedComponent style={{ padding: 60, ...style }} { ...props} />
+  }
+};
