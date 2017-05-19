@@ -1,0 +1,6 @@
+src
+.*
+coverage
+test
+rollup.config.js
+bs-config.json

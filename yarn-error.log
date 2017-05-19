@@ -1,0 +1,105 @@
+Arguments: 
+  /Users/kevindecock1/.nvm/versions/node/v6.3.0/bin/node /Users/kevindecock1/.nvm/versions/node/v6.3.0/bin/yarn install
+
+PATH: 
+  /Users/kevindecock1/.nvm/versions/node/v6.3.0/bin:/usr/local/sbin:/Users/kevindecock1/.rvm/gems/ruby-2.2.0/bin:/Users/kevindecock1/.rvm/gems/ruby-2.2.0@global/bin:/Users/kevindecock1/.rvm/rubies/ruby-2.2.0/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:ANDROID_HOME/tools:ANDROID_HOME/platform-tools:/opt/X11/bin:/usr/local/opt/go/libexec/bin:/Users/kevindecock1/.rvm/bin:/urs/local/Cellar/elixir:/usr/local/bin/psql
+
+Yarn version: 
+  0.24.4
+
+Node version: 
+  6.3.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "react-style-hoc",
+    "version": "0.0.1",
+    "description": "React higher order component - adds style related props to wrapped components",
+    "main": "dist/index.js",
+    "keywords": [
+      "react",
+      "hoc",
+      "style",
+      "stylus",
+      "'higher",
+      "order",
+      "component'",
+      "props"
+    ],
+    "author": "kevin decock",
+    "license": "ISC",
+    "scripts": {
+      "clear": "rimraf dist/**",
+      "lint": "esw src",
+      "lint:watch": "esw src -w",
+      "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register -t 2000 --recursive",
+      "test:watch": "npm run test -- -w",
+      "test:coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
+      "coverage:serve": "lite-server",
+      "rollup": "rollup --config rollup.config.js",
+      "build": "npm run rollup",
+      "bundle": "npm-run-all -s lint build",
+      "prepublish": "npm-run-all -s clear types bundle"
+    },
+    "devDependencies": {
+      "babel-cli": "^6.22.2",
+      "babel-plugin-external-helpers": "^6.22.0",
+      "babel-plugin-istanbul": "^3.1.2",
+      "babel-plugin-rewire": "^1.0.0",
+      "babel-plugin-transform-object-rest-spread": "^6.22.0",
+      "babel-polyfill": "^6.22.0",
+      "babel-preset-es2015": "^6.22.0",
+      "babel-preset-es2015-rollup": "^3.0.0",
+      "chai": "^3.5.0",
+      "copy": "^0.3.0",
+      "cross-env": "^3.1.4",
+      "eslint": "^3.17.1",
+      "eslint-watch": "^3.0.1",
+      "istanbul": "^1.1.0-alpha.1",
+      "lite-server": "^2.3.0",
+      "mocha": "^3.2.0",
+      "npm-run-all": "^4.0.2",
+      "nyc": "^10.1.2",
+      "rimraf": "^2.5.4",
+      "rollup": "^0.41.4",
+      "rollup-plugin-babel": "^2.7.1",
+      "rollup-plugin-uglify": "^1.0.1",
+      "sinon": "^1.17.7",
+      "sinon-chai": "^2.8.0",
+      "uglify-js": "github:mishoo/UglifyJS2#harmony"
+    },
+    "nyc": {
+      "include": [
+        "src/*.js"
+      ],
+      "require": [
+        "mocha",
+        "babel-register",
+        "babel-polyfill"
+      ],
+      "sourceMap": false,
+      "instrument": false
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines": {
+        "node": ">= 4.2.1",
+        "npm": ">= 3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND nexusrepo-z.antwerpen.be nexusrepo-z.antwerpen.be:443
+      at errnoException (dns.js:28:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:79:26)

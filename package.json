@@ -1,0 +1,81 @@
+{
+  "name": "react-style-hoc",
+  "version": "0.0.1",
+  "description": "React higher order component - adds style related props to wrapped components",
+  "main": "dist/index.js",
+  "keywords": [
+    "react",
+    "hoc",
+    "style",
+    "stylus",
+    "'higher",
+    "order",
+    "component'",
+    "props"
+  ],
+  "author": "kevin decock",
+  "license": "ISC",
+  "scripts": {
+    "clear": "rimraf dist/**",
+    "lint": "esw src",
+    "lint:watch": "esw src -w",
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register -t 2000 --recursive",
+    "test:watch": "npm run test -- -w",
+    "test:coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "coverage:serve": "lite-server",
+    "rollup": "rollup --config rollup.config.js",
+    "build": "npm run rollup",
+    "bundle": "npm-run-all -s lint build",
+    "prepublish": "npm-run-all -s clear bundle"
+  },
+  "devDependencies": {},
+  "nyc": {
+    "include": [
+      "src/*.js"
+    ],
+    "require": [
+      "mocha",
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">= 4.2.1",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-istanbul": "^4.1.3",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "chai": "^3.5.0",
+    "copy": "^0.3.0",
+    "cross-env": "^5.0.0",
+    "eslint": "^3.19.0",
+    "eslint-watch": "^3.1.0",
+    "istanbul": "^0.4.5",
+    "lite-server": "^2.3.0",
+    "mocha": "^3.4.1",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^10.3.2",
+    "react": "^15.5.4",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-jsx": "^1.0.3",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "sinon": "^2.2.0",
+    "sinon-chai": "^2.10.0",
+    "uglify-es": "^3.0.8"
+  }
+}
