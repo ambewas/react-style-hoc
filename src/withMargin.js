@@ -1,9 +1,12 @@
-import { curry } from 'ramda';
-import React, { Component } from 'react';
+export default (px) => (WrappedComponentOrStyle) => {
+  if (typeof WrappedComponentOrStyle !== 'function') {
+    return {
+      ...WrappedComponentOrStyle,
+      margin: px
+    }
+  }
 
-
-export default (px) => (WrappedComponent) => {
   return ({style, ...props}) => {
-    return <WrappedComponent style={{ margin: 60, ...style }} { ...props} />
+    return <WrappedComponentOrStyle style={{ margin: px, ...style }} { ...props} />
   }
 };
