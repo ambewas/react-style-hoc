@@ -78,6 +78,7 @@ export default App;
 
 The rendered result of the `<Styled />` component is then:
 
+```
 <div style="padding: 40px; margin: 60px; border: 1px solid red;">
   <div>test</div>
   <div>test</div>
@@ -85,6 +86,7 @@ The rendered result of the `<Styled />` component is then:
   <div>test</div>
   <div>test</div>
 </div>
+```
 
 
 
