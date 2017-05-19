@@ -21,7 +21,11 @@ MyComponent = withStyle(BaseComponent);
 
 ```
 
+## install & dev:
 
+`yarn install`
+
+`npm run bundle`
 
 ## usage:
 
