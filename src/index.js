@@ -2,23 +2,17 @@ import React, { cloneElement } from 'react';
 import withPadding from './withPadding.js';
 import withMargin from './withMargin.js';
 
-import { compose, curry } from 'ramda';
+import { compose } from 'ramda';
 
 
-const style = (computedStyle, c) => props => {
-  console.log('computedStyle in style', computedStyle);
-  console.log('c', c);
-  console.log('computedStyle.component', computedStyle.component);
-  const MyComponent = computedStyle.component;
-  console.log('computedStyle.style', computedStyle.style);
-  console.log('props',props);
-  return <MyComponent style={computedStyle.style} {...props}/>;
+const style = Component => style => {
+  console.log('style',style);
+  return (props) => <Component {...props}/>
 };
 
 export default {
   style,
   withPadding,
   withMargin,
-  compose,
-  curry
+  compose
 };
