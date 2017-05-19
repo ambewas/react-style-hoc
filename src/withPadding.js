@@ -1,14 +1,12 @@
-import { curry } from 'ramda';
+export default (px) => (WrappedComponentOrStyle) => {
+  if (typeof WrappedComponentOrStyle !== 'function') {
+    return {
+      ...WrappedComponentOrStyle,
+      padding: px
+    }
+  }
 
-
-export default curry((px) => (componentObject) => {
-  const component = componentObject.component || componentObject;
-  const style = componentObject.style;
-  return {
-    style: {
-      ...style,
-      padding: px,
-    },
-    component: component
-  };
-});
+  return ({style, ...props}) => {
+    return <WrappedComponentOrStyle style={{ padding: px, ...style }} { ...props} />
+  }
+};
