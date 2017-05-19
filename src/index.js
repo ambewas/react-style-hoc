@@ -1,50 +1,24 @@
-import { cloneElement } from 'react';
+import React, { cloneElement } from 'react';
 import withPadding from './withPadding.js';
+import withMargin from './withMargin.js';
 
-const isClassComponent = Component => Component && Component.prototype && typeof Component.prototype.isReactComponent === 'object';
+import { compose, curry } from 'ramda';
 
-const buildStyles = ({padding, margin, display, top, bottom, left, right, position}) => { // eslint-disable-line
-  return {
-    padding,
-    margin,
-    display,
-    top,
-    bottom,
-    left,
-    right,
-    position,
-  };
-};
 
-const style = (WrappedComponent) => {
-  if (isClassComponent(WrappedComponent)) {
-    class Enhancer extends WrappedComponent { // eslint-disable-line
-      constructor(props) {
-        super(props);
-      }
-
-      render() {
-        const wrappedComponent = super.render();
-        const newProps = {
-          style: buildStyles(this.props)
-        };
-
-        const props = Object.assign({}, wrappedComponent.props, wrappedComponent.defaultProps, newProps);
-        const newComponent = cloneElement(wrappedComponent, props, wrappedComponent.props.children);
-        return newComponent;
-      }
-    }
-
-    return Enhancer;
-  }
-
-  // stateless
-  return (props) => {
-    return <WrappedComponent style={buildStyles(props)} {...props}/>;
-  };
+const style = (computedStyle, c) => props => {
+  console.log('computedStyle in style', computedStyle);
+  console.log('c', c);
+  console.log('computedStyle.component', computedStyle.component);
+  const MyComponent = computedStyle.component;
+  console.log('computedStyle.style', computedStyle.style);
+  console.log('props',props);
+  return <MyComponent style={computedStyle.style} {...props}/>;
 };
 
 export default {
   style,
-  withPadding
+  withPadding,
+  withMargin,
+  compose,
+  curry
 };

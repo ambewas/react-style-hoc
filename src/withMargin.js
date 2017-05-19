@@ -7,7 +7,7 @@ export default curry((px) => (componentObject) => {
   return {
     style: {
       ...style,
-      padding: px,
+      margin: px,
     },
     component: component
   };
