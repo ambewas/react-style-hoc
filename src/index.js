@@ -1,4 +1,5 @@
 import { cloneElement } from 'react';
+import withPadding from './withPadding.js';
 
 const isClassComponent = Component => Component && Component.prototype && typeof Component.prototype.isReactComponent === 'object';
 
@@ -15,7 +16,7 @@ const buildStyles = ({padding, margin, display, top, bottom, left, right, positi
   };
 };
 
-const Style = (WrappedComponent) => {
+const style = (WrappedComponent) => {
   if (isClassComponent(WrappedComponent)) {
     class Enhancer extends WrappedComponent { // eslint-disable-line
       constructor(props) {
@@ -43,4 +44,7 @@ const Style = (WrappedComponent) => {
   };
 };
 
-export default Style;
+export default {
+  style,
+  withPadding
+};

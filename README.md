@@ -2,32 +2,22 @@
 
 Abstract outline:
 
-This HOC exposes SOME styles as props to your component - it is concerned with everything outside of the component box.
-So: only "positioning" styles are exposed as props.
+This library will provide other composable functions you can use to build up positioning styles. Eg:
 
-Props that we will expose:
-
-- padding
-- margin
-- display
-- flexParent
-- flexElement
-- top / bottom / left / right
-
-All of these css properties should be prefixed automatically.
-
-
-
-In addition, this library will provide other composable functions you can use to build up positioning styles. Eg:
 
 ```
+BaseComponent = ({style}) => <div style={style}>hello world</div>
+
 withStyle = compose(
+  style,
   withPadding(30), // padding: 30px;
   withMargin(40), // margin: 40px;
   isFlexParent(), // display: flex;
 )
 
 MyComponent = withStyle(BaseComponent);
+
+-> <div style = {padding: 30, margin: 40, display: 'flex'}>hello world</div>
 
 ```
 

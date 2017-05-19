@@ -28,7 +28,9 @@
     "bundle": "npm-run-all -s lint build",
     "prepublish": "npm-run-all -s clear bundle"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ramda": "^0.23.0"
+  },
   "nyc": {
     "include": [
       "src/*.js"
