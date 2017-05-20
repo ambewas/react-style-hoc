@@ -1,8 +1,19 @@
-## dev:
+## installation:
+
+`yarn add react-style-hoc`
+
+or if you prefer `npm`:
+
+`npm install --save react-style-hoc`
+
+## development:
 
 `yarn install`
 
-`npm run bundle`
+`npm run watch:js`
+
+## example:
+run [our example app](https://github.com/ambewas/react-style-hoc/tree/master/examples/test-app)
 
 ## usage:
 
