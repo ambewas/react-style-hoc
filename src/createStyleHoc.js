@@ -5,7 +5,7 @@ function isStateless(Component) {
   return Component.prototype ? Component.prototype.name : false;
 }
 
-const generateStyleObject = (style) => {
+const generateStyleObject = (style, value) => {
   // it's a style object with defaults
   if (typeof style === 'object' && !Array.isArray(style)) {
     return style;
@@ -13,11 +13,11 @@ const generateStyleObject = (style) => {
 
   // just an array with style keys
   if (Array.isArray(style)) {
-    return Object.assign(...style.map(key => ({ [key]: 30 })));
+    return Object.assign(...style.map(key => ({ [key]: value })));
   }
 
   // a style key string
-  return Object.assign({ [style]: 30 });
+  return Object.assign({ [style]: value });
 };
 
 
@@ -27,7 +27,7 @@ export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   // we should support default styles, an array of style values to be added, or one string.
 
   console.log('value',value);
-  let newStyleObject = generateStyleObject(style);
+  let newStyleObject = generateStyleObject(style, value);
   console.log('newStyleObject', newStyleObject);
   console.log('WrappedComponentOrStyle', WrappedComponentOrStyle);
 
