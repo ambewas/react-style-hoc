@@ -12,6 +12,8 @@ or if you prefer `npm`:
 
 `npm run watch:js`
 
+run tests: `npm test`
+
 ## example:
 run [our example app](https://github.com/ambewas/react-style-hoc/tree/master/examples/test-app)
 
