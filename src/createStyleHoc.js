@@ -1,10 +1,5 @@
 import { curry } from 'ramda';
 
-function isStateless(Component) {
-  console.log('Component.prototype',Component.prototype);
-  return Component.prototype ? Component.prototype.name : false;
-}
-
 const generateStyleObject = (style, value) => {
   // it's a style object with defaults
   if (typeof style === 'object' && !Array.isArray(style)) {
@@ -26,10 +21,7 @@ export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   // style -> e.g. { margin: 10, padding: 30 } || ['margin', 'padding'] || 'margin'
   // we should support default styles, an array of style values to be added, or one string.
 
-  console.log('value',value);
   let newStyleObject = generateStyleObject(style, value);
-  console.log('newStyleObject', newStyleObject);
-  console.log('WrappedComponentOrStyle', WrappedComponentOrStyle);
 
   /**
   |--------------------------------------------------
@@ -39,15 +31,9 @@ export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   |--------------------------------------------------
   */
 
-  // if (!isStateless(WrappedComponentOrStyle)) {
-  //   console.log('style, not a component..');
-  //   return {
-  //     ...WrappedComponentOrStyle,
-  //     ...newStyleObject,
-  //   };
-  // }
-
-  return ({ style, ...props }) => {
+  const wrappedComponent = ({ style, ...props }) => {
     return <WrappedComponentOrStyle style={{ ...newStyleObject, ...style }} { ...props} />;
   };
+
+  return wrappedComponent;
 });
