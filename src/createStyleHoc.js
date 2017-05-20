@@ -1,21 +1,7 @@
+import React from 'react'; // eslint-disable-line
+
 import { curry } from 'ramda';
-
-const generateStyleObject = (style, value) => {
-
-  // it's a style object with defaults
-  if (typeof style === 'object' && !Array.isArray(style)) {
-    return style;
-  }
-
-  // just an array with style keys
-  if (Array.isArray(style)) {
-    return Object.assign(...style.map(key => ({ [key]: value })));
-  }
-
-  // a style key string
-  return Object.assign({ [style]: value });
-};
-
+import { generateStyleObject } from './helpers/index.js';
 
 export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   // style -> e.g. { margin: 10, padding: 30 } || ['margin', 'padding'] || 'margin'

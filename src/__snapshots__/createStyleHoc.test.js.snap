@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createStyleHoc when using createStyleHoc with a style object, it should add the correct style prop 1`] = `
+<div
+  style={
+    Object {
+      "margin": 40,
+      "padding": 10,
+    }
+  }
+>
+  unstyled
+</div>
+`;
+
+exports[`createStyleHoc when wrapping a component in a HOC created by createStyleHoc, it should add the correct style prop 1`] = `
+<div
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  unstyled
+</div>
+`;
