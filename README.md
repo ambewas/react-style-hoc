@@ -1,4 +1,4 @@
-# Why would I want to compose styles with functions...?!
+# [motivation] Why would I want to compose styles with functions...?!
 
 Great question!
 
