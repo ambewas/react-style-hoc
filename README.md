@@ -148,13 +148,10 @@ export default App;
 
 ```
 
+# Contributing
 
+Please see our guidelines in `CONTRIBUTING.md` if you want to contribute something to this library.
 
+# License
 
-# to do:
-- how shall we handle auto prefixing?
-- How do we want to expose things like align-items for flexbox?
-- Do we want to provide default positioning utilities?
-- Should everything be a function, or do we allow more configuration as params..?
-- ....
-
+MIT Licensed. Copyright (c) Kevin Decock 2017.
