@@ -29,7 +29,16 @@ export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   console.log('value',value);
   let newStyleObject = generateStyleObject(style);
   console.log('newStyleObject', newStyleObject);
-  console.log('WrappedComponentOrStyle',WrappedComponentOrStyle);
+  console.log('WrappedComponentOrStyle', WrappedComponentOrStyle);
+
+  /**
+  |--------------------------------------------------
+  | how can we detect is a component has been passed through,
+  | and otherwise simply generate a style object? -- useful for
+  | composing without having to depend on react.
+  |--------------------------------------------------
+  */
+
   // if (!isStateless(WrappedComponentOrStyle)) {
   //   console.log('style, not a component..');
   //   return {
