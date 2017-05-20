@@ -16,6 +16,7 @@
   "author": "kevin decock",
   "license": "ISC",
   "scripts": {
+    "watch:js": "onchange \"src/\" -- npm run bundle",
     "clear": "rimraf dist/**",
     "lint": "esw src",
     "lint:watch": "esw src -w",
@@ -29,6 +30,8 @@
     "prepublish": "npm-run-all -s clear bundle"
   },
   "devDependencies": {
+    "npm-watch": "^0.1.9",
+    "onchange": "^3.2.1",
     "ramda": "^0.23.0"
   },
   "nyc": {

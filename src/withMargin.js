@@ -1,12 +1,6 @@
-export default (px) => (WrappedComponentOrStyle) => {
-  if (typeof WrappedComponentOrStyle !== 'function') {
-    return {
-      ...WrappedComponentOrStyle,
-      margin: px
-    }
-  }
+import { curry } from 'ramda';
+import { createStyleHoc } from './createStyleHoc.js';
 
-  return ({style, ...props}) => {
-    return <WrappedComponentOrStyle style={{ margin: px, ...style }} { ...props} />
-  }
-};
+// export const withMargin = createStyleHoc({ margin: 10, padding: '10vh' });
+// export const withMargin = createStyleHoc(['margin', 'padding']);
+export const withMargin = createStyleHoc('margin');

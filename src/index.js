@@ -1,13 +1,5 @@
-import React, { cloneElement } from 'react';
-import withPadding from './withPadding.js';
-import withMargin from './withMargin.js';
-
-import { compose, curry } from 'ramda';
+export { withPadding } from './withPadding';
+export { withMargin } from './withMargin';
 
 
-export default {
-  withPadding,
-  withMargin,
-  compose,
-  curry
-};
+export { compose, curry } from 'ramda';
