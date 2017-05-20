@@ -29,13 +29,13 @@ const isFlexCenterer = compose(
 )
 ```
 
-when using `isFlexCenterer` on it's own as a wrapper around `MyComponent`, like this:
+When using `isFlexCenterer` on it's own as a wrapper around `MyComponent`, like this:...
 
 ```
 export isFlexCenterer(MyComponent);
 ```
 
-tghe `style` prop of `MyComponent` then looks like this:
+the `style` prop of `MyComponent` then looks like this:
 
 ```
 {
