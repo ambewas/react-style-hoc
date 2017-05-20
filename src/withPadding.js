@@ -1,14 +1,5 @@
 import { curry } from 'ramda';
-
-export const withPadding = curry((value, WrappedComponentOrStyle) => {
-  if (typeof WrappedComponentOrStyle !== 'function') {
-    return {
-      ...WrappedComponentOrStyle,
-      padding: value
-    };
-  }
-
-  return ({style, ...props}) => {
-    return <WrappedComponentOrStyle style={{ padding: value, ...style }} { ...props} />;
-  };
-});
+import { createStyleHoc } from './createStyleHoc.js';
+// export const withPadding = createStyleHoc({ margin: 10, padding: '10vh' });
+// export const withPadding = createStyleHoc(['margin', 'padding']);
+export const withPadding = createStyleHoc('padding');
