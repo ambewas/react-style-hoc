@@ -20,7 +20,7 @@ const withPaddingAndMargin = compose(
 
 ```
 
-### ... or create your own style HOCS using createStyleHoc:
+### ... or create your own style HOCS using `createStyleHoc`:
 Pass a string (style key). Everything here is curried, so if no default value is provided, you still have to call `withColor` with a value -> see usage in `withAllStyles`
 ```
 const withColor = createStyleHoc('color');
