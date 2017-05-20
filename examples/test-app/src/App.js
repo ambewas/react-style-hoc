@@ -4,7 +4,7 @@ import { withPadding, withMargin, compose, createStyleHoc } from 'react-style-ho
 // compose styles with our default provided style HOCs
 const withPaddingAndMargin = compose(
   withPadding(20),
-  withMargin(50),
+  withMargin(50)
 );
 
 
@@ -26,10 +26,10 @@ const withAllStyles = compose(
   withSomeRandomStyleAsArguments,
   withSomeRandomStyleAsObject,
   withPaddingAndMargin,
-  withColor('#78a5ff'),
-)
+  withColor('#78a5ff')
+);
 
-const TestStateless = ({ children, style }) => <div style={style}>{children}</div>
+const TestStateless = ({ children, style }) => <div style={style}>{children}</div>;
 const Styled = withAllStyles(TestStateless);
 
 class App extends Component {

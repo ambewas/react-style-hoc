@@ -14,7 +14,12 @@
             "experimentalObjectRestSpread": true
         }
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
         "brace-style": 1,
         "camelcase": [1, {
             "properties": "never"
