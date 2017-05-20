@@ -15,6 +15,9 @@ The purpose of this repository is to allow you to declare styles as functions, t
 
 The direct benefit of which is that it becomes possible to create reusable HOCs for styling.
 
+This is probably not a very useful example for 'looks-and-feel' styles (everything 'inside the component box') - but more for things that have to do with positioning. Separating those two concerns is a good idea in any case, and this provides you with a tool to do so.
+
+
 A simple example would be to define a flex centerer, which would look something like this:
 
 ```
