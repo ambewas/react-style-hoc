@@ -8,22 +8,24 @@
 
 ```
 import React, { Component } from 'react';
-import { withPadding, withMargin, compose } from 'react-style-hoc';
+import { withPadding, withMargin, compose, createStyleHoc } from 'react-style-hoc';
 
-const composeStyles = compose(
-  withMargin(60),
-  withPadding(40)
+const withPaddingAndMargin = compose(
+  withPadding(20),
+  withMargin(50),
 );
 
+
+// you can create your own style HOCs
+const withColor = createStyleHoc('color');
+
+const withColorPaddingMargin = compose(
+  withPaddingAndMargin,
+  withColor('#78a5ff'),
+)
+
 const TestStateless = ({ children, style }) => <div style={style}>{children}</div>
-
-// create a styled component
-const Styled = composeStyles(TestStateless);
-
-
-//... OR just check what styles have been generated with your composed function:
-const styles = composeStyles();
-console.log('composed styles: ', styles);
+const Styled = withColorPaddingMargin(TestStateless);
 
 class App extends Component {
   render() {
@@ -31,7 +33,7 @@ class App extends Component {
       <div className="App">
         hello
         <Styled style={{border: '1px solid red'}}>
-          <div>test</div>
+          <div>with padding, composed with margin</div>
           <div>test</div>
           <div>test</div>
           <div>test</div>
@@ -42,10 +44,8 @@ class App extends Component {
   }
 }
 
-
-
-
 export default App;
+
 
 ```
 
