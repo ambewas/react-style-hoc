@@ -1,6 +1,6 @@
 {
   "name": "react-style-hoc",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "React higher order component - adds style related props to wrapped components",
   "main": "dist/index.js",
   "keywords": [
