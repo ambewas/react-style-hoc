@@ -34,7 +34,7 @@ when using `isFlexCenterer` on it's own as a wrapper around `MyComponent`, like 
 export isFlexCenterer(MyComponent);
 ```
 
-the `style` prop of `MyComponent` then looks like this:
+tghe `style` prop of `MyComponent` then looks like this:
 
 ```
 {
@@ -60,7 +60,7 @@ const isFullyStyled = compose(
 ```
 
 
-
+This is a very young library, and contributions very welcome!
 
 # Development:
 
