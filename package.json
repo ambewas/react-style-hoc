@@ -85,8 +85,7 @@
   },
   "dependencies": {
     "ramda": "^0.23.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.5.4"
   },
   "peerDependencies": {
     "react": "^15.5.4"
