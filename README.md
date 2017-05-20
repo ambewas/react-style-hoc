@@ -5,7 +5,8 @@
 or if you prefer `npm`:
 
 `npm install --save react-style-hoc`
-g
+
+
 # [motivation] Why would I want to compose styles with functions...?!
 
 Great question!
