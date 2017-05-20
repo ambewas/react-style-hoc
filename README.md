@@ -1,3 +1,11 @@
+# Installation:
+
+`yarn add react-style-hoc`
+
+or if you prefer `npm`:
+
+`npm install --save react-style-hoc`
+
 # [motivation] Why would I want to compose styles with functions...?!
 
 Great question!
@@ -53,13 +61,6 @@ const isFullyStyled = compose(
 
 
 
-# Installation:
-
-`yarn add react-style-hoc`
-
-or if you prefer `npm`:
-
-`npm install --save react-style-hoc`
 
 # Development:
 
