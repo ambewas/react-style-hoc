@@ -29,21 +29,33 @@ const withAllStyles = compose(
   withColor('#78a5ff')
 );
 
-const TestStateless = ({ children, style }) => <div style={style}>{children}</div>;
-const Styled = withAllStyles(TestStateless);
+// const TestStateless = ({ children, style }) => <div style={style}>{children}</div>;
+// const Styled = withAllStyles(TestStateless);
 
+
+class TestComponent extends Component {
+  render() {
+    return <div style={this.props.style}>a react component test</div>
+  }
+}
+
+const TestStyled = withAllStyles(TestComponent)();
+
+console.log('TestStyled',TestStyled);
 class App extends Component {
   render() {
     return (
       <div className="App">
         hello
-        <Styled style={{border: '1px solid red'}}>
+        <span style={{border: '1px solid red'}}>
           <div>with padding, composed with margin</div>
           <div>test</div>
           <div>test</div>
           <div>test</div>
           <div>test</div>
-        </Styled>
+        </span>
+
+        <TestStyled />
       </div>
     );
   }

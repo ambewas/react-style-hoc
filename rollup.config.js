@@ -30,6 +30,6 @@ export default {
             plugins: ['transform-object-rest-spread', 'external-helpers'],
             exclude: 'node_modules/**'
         }),
-        uglify({}, minify)
+        // uglify({}, minify)
     ]
 };

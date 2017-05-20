@@ -1,7 +1,8 @@
-import React from 'react'; // eslint-disable-line
-
+import React, { Component } from 'react'; // eslint-disable-line
 import { curry } from 'ramda';
 import { generateStyleObject } from './helpers/index.js';
+
+const isClassComponent = Component => Component && Component.prototype && typeof Component.prototype.isReactComponent === 'object'
 
 export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   // style -> e.g. { margin: 10, padding: 30 } || ['margin', 'padding'] || 'margin'
@@ -16,6 +17,16 @@ export const createStyleHoc = curry((style, value, WrappedComponentOrStyle) => {
   | composing without having to depend on react.
   |--------------------------------------------------
   */
+
+  if (isClassComponent(WrappedComponentOrStyle)) {
+    console.log('hello');
+    return class NewComponent extends Component {
+      render() {
+        const { style, ...props } = this.props;
+        return <WrappedComponentOrStyle style={{ ...newStyleObject, ...style }} { ...props} />;
+      }
+    };
+  }
 
   return ({ style, ...props }) => {
     return <WrappedComponentOrStyle style={{ ...newStyleObject, ...style }} { ...props} />;
