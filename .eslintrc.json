@@ -3,7 +3,8 @@
     "env": {
         "es6": true,
         "mocha": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
@@ -77,7 +78,7 @@
             "after": true
         }],
         "space-before-blocks": [1, "always"],
-        "space-before-function-paren": [1, {
+        "space-before-function-paren": [0, {
             "anonymous": "always",
             "named": "never"
         }],
