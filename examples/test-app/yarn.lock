@@ -4209,11 +4209,12 @@ react-scripts@0.9.5:
   optionalDependencies:
     fsevents "1.0.17"
 
-react-style-hoc@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/react-style-hoc/-/react-style-hoc-0.2.3.tgz#d2df88a8de644706347bf2bb902ead9c0b867bcb"
+react-style-hoc@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-style-hoc/-/react-style-hoc-0.3.0.tgz#11a4dd1265c12d2ad9897dc36e7d3385b408d8fb"
   dependencies:
     ramda "^0.23.0"
+    react "^15.5.4"
 
 react@^15.5.4:
   version "15.5.4"
