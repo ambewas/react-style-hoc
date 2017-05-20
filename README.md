@@ -5,7 +5,7 @@
 or if you prefer `npm`:
 
 `npm install --save react-style-hoc`
-
+g
 # [motivation] Why would I want to compose styles with functions...?!
 
 Great question!
@@ -28,13 +28,13 @@ const isFlexCenterer = compose(
 )
 ```
 
-When using `isFlexCenterer` on it's own as a wrapper around `MyComponent`, like this:
+when using `isFlexCenterer` on it's own as a wrapper around `MyComponent`, like this:
 
 ```
 export isFlexCenterer(MyComponent);
 ```
 
-The `style` prop of `MyComponent` then looks like this:
+the `style` prop of `MyComponent` then looks like this:
 
 ```
 {
