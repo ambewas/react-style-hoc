@@ -51,7 +51,7 @@ the `style` prop of `MyComponent` then looks like this:
 
 Of course, the power of composing styles only becomes fully clear once you start composing different helpers.
 
-You can compare this to using `mixings` in a CSS preprocessor such as SASS or LESS.
+You can compare this to using `mixins` in a CSS preprocessor such as SASS or LESS.
 
 ```
 const isFullyStyled = compose(
