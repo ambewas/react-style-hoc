@@ -9,7 +9,8 @@ export default {
     external: [
         // add external packages here
         // e.g. 'rxjs/Observable'
-        'ramda'
+        'ramda',
+        'react'
     ],
     dest: 'dist/index.js',
     sourceMap: true,
@@ -18,7 +19,8 @@ export default {
     globals: {
         // add external packages as globals here
         // e.g. 'rxjs/Observable': 'rxjs_Observable'
-        'ramda': 'ramda'
+        'ramda': 'ramda',
+        'react': 'react'
     },
     plugins: [
         jsx({ factory: 'React.createElement' }),
