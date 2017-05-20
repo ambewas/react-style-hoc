@@ -9,35 +9,52 @@
 ```
 import React, { Component } from 'react';
 import { withPadding, withMargin, compose, createStyleHoc } from 'react-style-hoc';
+```
 
-// compose styles with our default provided style HOCs
+### Compose styles with our default provided style HOCs
+```
 const withPaddingAndMargin = compose(
   withPadding(20),
   withMargin(50),
 );
 
+```
 
-// ... or create your own style HOCS using createStyleHoc:
-// pass a string (style key) -> see usage in `withAllStyles`
+... or create your own style HOCS using createStyleHoc:
+### Pass a string (style key). Everything here is curried, so if no default value is provided, you still have to call `withColor` with a value -> see usage in `withAllStyles`
+```
 const withColor = createStyleHoc('color');
+```
 
-// pass an object with default styles applied:
-// need that second argument. Gotta figure out how to get rid of it -- but it's curried, so...?
+### Pass style key & value as arguments:
+```
+const withSomeRandomStyleAsArguments = createStyleHoc('display', 'flex');
+```
+
+### Pass an object with default styles applied:
+
+Note: we need that second argument. We still need figure out how to get rid of that. Should we even expose this kind of API? Thoughts are welcome.
+```
 const withSomeRandomStyleAsObject = createStyleHoc({
   background: 'purple',
 }, '');
+```
 
-// pass style key & value as arguments:
-const withSomeRandomStyleAsArguments = createStyleHoc('display', 'flex');
-
-// compose all previously made styles into one!
+### Compose all previously made styles into one!
+```
 const withAllStyles = compose(
   withSomeRandomStyleAsArguments,
   withSomeRandomStyleAsObject,
   withPaddingAndMargin,
   withColor('#78a5ff'),
 )
+```
 
+
+### Use the hoc on your stateless components:
+
+Note: you can still provide some other default style as a prop, the HOC styles will be applied after -- so its possible to override everything. E.g. if we would have provided `{padding: '1px'}`, then  `withPadding(20)` from before would not have any effect.
+```
 const TestStateless = ({ children, style }) => <div style={style}>{children}</div>
 const Styled = withAllStyles(TestStateless);
 
@@ -62,24 +79,11 @@ export default App;
 
 ```
 
-## result in DOM
-
-The rendered result of the `<Styled />` component is then:
-
-```
-<div style="padding: 40px; margin: 60px; border: 1px solid red;">
-  <div>test</div>
-  <div>test</div>
-  <div>test</div>
-  <div>test</div>
-  <div>test</div>
-</div>
-```
-
 
 
 
 ## to do:
+- how shall we handle auto prefixing?
 - How do we want to expose things like align-items for flexbox?
 - Do we want to provide default positioning utilities?
 - Should everything be a function, or do we allow more configuration as params..?
